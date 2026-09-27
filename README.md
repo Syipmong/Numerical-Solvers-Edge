@@ -27,3 +27,21 @@ cmake --build build
 ./build/bench_solvers
 python scripts/plot_drift.py
 ```
+
+On Windows with the Visual Studio generator, use:
+
+```powershell
+cmake -S . -B build
+cmake --build build --config Release
+.\build\Release\bench_solvers.exe
+python .\scripts\plot_drift.py
+```
+
+The benchmark writes `drift_data.csv`, and the plotting script saves
+`drift_plot.png`.
+
+Install the plotting dependency once with:
+
+```powershell
+python -m pip install matplotlib
+```

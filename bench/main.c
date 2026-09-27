@@ -17,7 +17,7 @@ int main(void)
     FILE *fp = fopen("drift_data.csv", "w");
     if (!fp)
     {
-        printf("Failed to open output file. \n");
+        fprintf(stderr, "Failed to open output file.\n");
         return 1;
     }
     fprintf(fp, "Step, Time, RK4_EnergyDRift, SE_EnergyDrift\n");

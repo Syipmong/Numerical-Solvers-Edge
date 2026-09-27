@@ -1,0 +1,32 @@
+# CMake build directories and generated files
+/build/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+Makefile
+*.sln
+*.vcxproj
+*.vcxproj.filters
+
+# Compiled artifacts
+*.o
+*.obj
+*.a
+*.lib
+*.dll
+*.exe
+
+# Simulation and generated plot output
+drift_data.csv
+drift_plot.png
+
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# IDE files
+.vscode/
+.idea/

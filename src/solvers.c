@@ -2,8 +2,7 @@
 
 static inline float acceleration(float x, const oscillator_params_t *params)
 {
-    -params -> omega_sq * x;
-
+    return -params->omega_sq * x;
 }
 
 float compute_hamiltonian(const state_t *state, const oscillator_params_t *params)
@@ -28,8 +27,8 @@ state_t step_rk4(state_t s, float dt, const oscillator_params_t *params)
     float k3_v = acceleration(x_k3, params);
 
     /* Stage 4*/
-    float x_k4 = s.x + 0.5f * dt * k3_x;
-    float k4_x = s.v + 0.5f * dt * k3_v;
+    float x_k4 = s.x + dt * k3_x;
+    float k4_x = s.v + dt * k3_v;
     float k4_v = acceleration(x_k4, params);
 
     state_t next;
