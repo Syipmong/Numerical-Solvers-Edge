@@ -37,3 +37,15 @@ state_t step_rk4(state_t s, float dt, const oscillator_params_t *params)
     next.v = s.v + (dt / 6.0f) * (k1_v + 2.0f * k2_v + 2.0f * k3_v + k4_v);
     return next;
 }
+
+state_t state_symplectic_euler(state_t s, float dt, const oscillator_params_t *params)
+{
+    state_t next;
+
+    /* Update Momentum via current position*/
+    next.v = s.v + dt * acceleration(s.x, params);
+
+    /*Update position using the updated momentum*/
+    next.x = s.x + dt * next.v;
+    return next;
+}
