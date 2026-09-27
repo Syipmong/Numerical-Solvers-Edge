@@ -37,7 +37,7 @@ int main(void)
         }
 
         rk4_state = step_rk4(rk4_state, TIME_STEP, &params);
-        se_state = state_symplectic_euler(se_state, TIME_STEP, &params);
+        se_state = step_symplectic_euler(se_state, TIME_STEP, &params);
     }
 
     fclose(fp);

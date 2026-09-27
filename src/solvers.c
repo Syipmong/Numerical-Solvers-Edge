@@ -38,7 +38,7 @@ state_t step_rk4(state_t s, float dt, const oscillator_params_t *params)
     return next;
 }
 
-state_t state_symplectic_euler(state_t s, float dt, const oscillator_params_t *params)
+state_t step_symplectic_euler(state_t s, float dt, const oscillator_params_t *params)
 {
     state_t next;
 

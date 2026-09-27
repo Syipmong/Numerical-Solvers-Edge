@@ -29,7 +29,7 @@ typedef struct {
    * @brief Advances step by dt using semi-implicit (symplectic) Euler.
    * Requires 1 derivative evaluation per step . Preserves Symplectic 2-form.
    */
-  state_t state_symplectic_euler(state_t current, float dt, const oscillator_params_t *params);
+  state_t step_symplectic_euler(state_t current, float dt, const oscillator_params_t *params);
 
   #ifdef __cplusplus
 
